@@ -33,6 +33,7 @@ const Sidebar = () => {
             sm: "block"
         }
     }}>
+     <Box position="fixed">
       <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href='#' >
@@ -92,6 +93,7 @@ const Sidebar = () => {
           </ListItemButton>
         </ListItem>
       </List>
+      </Box>
     </Box>
   )
 }
