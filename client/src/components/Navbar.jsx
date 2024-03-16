@@ -1,5 +1,5 @@
-import { AppBar, Avatar, Badge, Box, InputBase, Toolbar, Typography } from '@mui/material'
-import React from 'react'
+import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import MessageIcon from '@mui/icons-material/Message';
 import CableIcon from '@mui/icons-material/Cable';
@@ -40,6 +40,7 @@ const UserBox = styled(Box)(({theme}) =>({
 
 
 const Navbar = () => {
+  const [open , setOpen] = useState(false);
   return (
     <AppBar position='stick'>  
         <StyledToolbar >
@@ -54,13 +55,36 @@ const Navbar = () => {
            <Search><InputBase placeholder='Search...'/></Search>
            <Icons><Badge badgeContent={4} color='error' > <MessageIcon /> </Badge>
               <Badge badgeContent={2}  color='error' > <CircleNotificationsIcon/> </Badge>
-              <Avatar sx={{width: 23, height: 23}} src='https://static.toiimg.com/thumb/msid-93725920,width-1280,height-720,resizemode-4/93725920.jpg'/>
+              <Avatar sx={{width: 23, height: 23}} src='https://static.toiimg.com/thumb/msid-93725920,width-1280,height-720,resizemode-4/93725920.jpg'
+                onClick ={(e)=> setOpen(true)}
+              />
            </Icons>
-           <UserBox>
-            <Avatar sx={{width: 23, height: 23 }} src='https://static.toiimg.com/thumb/msid-93725920,width-1280,height-720,resizemode-4/93725920.jpg'/>
+           <UserBox onClick ={(e)=> setOpen(true)}>
+            <Avatar sx={{width: 23, height: 23 }} src='https://static.toiimg.com/thumb/msid-93725920,width-1280,height-720,resizemode-4/93725920.jpg'
+               
+              />
             <Typography variant='span'>Anjali</Typography>
            </UserBox>
-        </StyledToolbar>     
+        </StyledToolbar>
+        <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        
+        open={open}
+        onClose={e=>setOpen(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+      >
+        <MenuItem >Profile</MenuItem>
+        <MenuItem >My account</MenuItem>
+        <MenuItem >Logout</MenuItem>
+      </Menu>
     </AppBar>
   )
 }
