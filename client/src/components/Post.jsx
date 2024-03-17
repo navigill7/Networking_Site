@@ -21,7 +21,7 @@ const Post = () => {
             <MoreVert />
           </IconButton>
         }
-        title="Uday Bansal"
+        title="Anurag"
         subheader="March 16, 2024"
       />
       <CardMedia
