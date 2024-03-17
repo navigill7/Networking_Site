@@ -13,7 +13,7 @@ const Post = () => {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            U
+            A
           </Avatar>
         }
         action={
