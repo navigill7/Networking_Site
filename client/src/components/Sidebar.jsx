@@ -18,7 +18,7 @@ const StyledListItemIcon = styled(ListItemIcon)({
   marginRight: '16px',
 });
 
-const Sidebar = () => {
+const Sidebar = ({mode , setMode}) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -88,8 +88,8 @@ const Sidebar = () => {
             <StyledListItemIcon>
               {darkMode ? <DarkModeIcon /> : <LightModeIcon />}
             </StyledListItemIcon>
-            <ListItemText primary={darkMode ? 'Light' : 'Dark'} />
-            <Switch checked={darkMode} onChange={toggleDarkMode} />
+            <ListItemText primary={darkMode ? 'Dark' : 'light'} />
+            <Switch checked={darkMode} onChange={e=>setMode(mode === "light" ? "dark" : "light")} />
           </ListItemButton>
         </ListItem>
       </List>
