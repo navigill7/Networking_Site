@@ -4,6 +4,7 @@ import Feed from "./components/Feed"
 import { Box, Container, Stack } from "@mui/material";
 import Divider from "@mui/material";
 import Navbar from "./components/Navbar";
+import Add from "./components/Add";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Feed/>
         <Rightbar/>
       </Stack>
-     
+     <Add/>
     </Box>
   );
 }
